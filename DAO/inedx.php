@@ -19,13 +19,15 @@ require_once("config.php");
 // $usuario->login("joao", "1234567890");
 // echo json_encode($usuário);
 
-// Inserir Usuário
-$aluno = new Usuario();
-$aluno->setDeslogin("aluno");;
-$aluno->setDessenha("@lun0");
+// Criando um novo usuário
+// $aluno = new Usuario("aluno", "@lun0");
+// $aluno->insert();
+// echo $aluno;
 
-$aluno->insert();
-
-echo json_encode($aluno);
+// // Editando um usuário
+$usuario = new Usuario();
+$usuario->loadById(1);
+$usuario->update("professor", "123");
+echo $usuario;
 
  ?>
